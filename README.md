@@ -1,7 +1,9 @@
 This is demo next js app with react-query
 ## Getting Started
 
-First, run the development server:
+First, copy the `.env.example` file content to `env.local` file.
+
+Then, run the command
 
 ```bash
 npm run dev
