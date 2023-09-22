@@ -8,15 +8,13 @@ function Login() {
     const [email, setEmail] = useState<string>('');
     const [githubRepoUrl, setGithubRepoUrl] = useState<string>('');
 
+    console.log(process.env.API_URL);
+
     // React Query 
     const queryClient = useQueryClient();
-    // const submitFormMutation = useMutation((data: { email: string; githubRepoUrl: string }) =>
-    //     // axios.post('https://cv-devs-temp-challenge.vercel.app/api/challenge', data)
-    //     axios.post('https://jsonplaceholder.typicode.com/posts', data)
-    // );
 
     const loginAction = async (data: { email: string; githubRepoUrl: string }) => {
-        const { data: response } = await axios.post('https://jsonplaceholder.typicode.com/posts', data)
+        const { data: response } = await axios.post(process.env.API_URL || "", data)
         return response.data;
     };
 
